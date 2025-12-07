@@ -1,0 +1,21 @@
+{
+  "tool_name": "add_paragraph",
+  "description": "Add a paragraph to a Word document.",
+  "input_args": {
+    "filename": "string",
+    "text": "string",
+    "style": "string"
+  },
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {
+      "filename": "Q3_Sales_Report.docx",
+      "text": "Quarterly sales performance data for Q3:"
+    },
+    "output": {
+      "result": null
+    }
+  }
+}

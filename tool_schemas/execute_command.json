@@ -1,0 +1,19 @@
+{
+  "tool_name": "execute_command",
+  "description": "Execute terminal command and return results\n    \n    Args:\n        command: Command line command to execute\n        timeout: Command timeout in seconds, default is 30 seconds\n    \n    Returns:\n        Output of the command execution",
+  "input_args": {
+    "command": "string",
+    "timeout": "integer"
+  },
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {
+      "command": "grep \"ERROR\" sample.log > error_lines.txt"
+    },
+    "output": {
+      "result": null
+    }
+  }
+}

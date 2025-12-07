@@ -1,0 +1,18 @@
+{
+  "tool_name": "change_directory",
+  "description": "Change current working directory\n    \n    Args:\n        path: Directory path to switch to\n    \n    Returns:\n        Operation result information",
+  "input_args": {
+    "path": "string"
+  },
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {
+      "path": "/Users/$(whoami)/Downloads"
+    },
+    "output": {
+      "result": null
+    }
+  }
+}

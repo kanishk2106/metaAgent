@@ -1,0 +1,4 @@
+datasets
+prefixspan
+google-generativeai
+python-docx

@@ -1,0 +1,12 @@
+{
+  "name": "local-filesystem-tools",
+  "version": "1.0.0",
+  "description": "MCP server providing local filesystem and text processing tools for Gemini AI Studio",
+  "command": "python3 server.py",
+  "permissions": {
+    "files": {
+      "read": true,
+      "write": true
+    }
+  }
+}

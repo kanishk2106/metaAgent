@@ -1,0 +1,22 @@
+{
+  "tool_name": "create_document",
+  "description": "Create a new Word document with optional metadata.",
+  "input_args": {
+    "filename": "string",
+    "title": "string",
+    "author": "string"
+  },
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {
+      "filename": "Q3_Sales_Report.docx",
+      "title": "Q3 Sales Report",
+      "author": "Sales Department"
+    },
+    "output": {
+      "result": null
+    }
+  }
+}

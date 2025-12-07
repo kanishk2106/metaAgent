@@ -1,0 +1,234 @@
+[
+  {
+    "name": "create_document",
+    "server": "office-word-document-server",
+    "full_name": "office-word-document-server-create_document",
+    "description": "Create a new Word document with optional metadata.",
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "description": "Name of the Word document to create",
+        "required": true
+      },
+      "title": {
+        "type": "string",
+        "description": "Document title metadata",
+        "required": false
+      },
+      "author": {
+        "type": "string",
+        "description": "Document author metadata",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "add_heading",
+    "server": "office-word-document-server",
+    "full_name": "office-word-document-server-add_heading",
+    "description": "Add a heading to a Word document.",
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "description": "Name of the Word document",
+        "required": true
+      },
+      "text": {
+        "type": "string",
+        "description": "Heading text content",
+        "required": true
+      },
+      "level": {
+        "type": "integer",
+        "description": "Heading level (1=H1, 2=H2, etc.)",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "add_paragraph",
+    "server": "office-word-document-server",
+    "full_name": "office-word-document-server-add_paragraph",
+    "description": "Add a paragraph to a Word document.",
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "description": "Name of the Word document",
+        "required": true
+      },
+      "text": {
+        "type": "string",
+        "description": "Paragraph text content",
+        "required": true
+      },
+      "style": {
+        "type": "string",
+        "description": "Paragraph style (e.g., Normal, BodyText)",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "add_table",
+    "server": "office-word-document-server",
+    "full_name": "office-word-document-server-add_table",
+    "description": "Add a table to a Word document.",
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "description": "Name of the Word document",
+        "required": true
+      },
+      "rows": {
+        "type": "integer",
+        "description": "Number of rows in the table",
+        "required": true
+      },
+      "cols": {
+        "type": "integer",
+        "description": "Number of columns in the table",
+        "required": true
+      },
+      "data": {
+        "type": "array",
+        "description": "Optional 2D array of cell data",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "format_table",
+    "server": "office-word-document-server",
+    "full_name": "office-word-document-server-format_table",
+    "description": "Format a table with borders, shading, and structure.",
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "description": "Name of the Word document",
+        "required": true
+      },
+      "table_index": {
+        "type": "integer",
+        "description": "Index of the table to format (0-based)",
+        "required": true
+      },
+      "has_header_row": {
+        "type": "boolean",
+        "description": "Whether the first row is a header",
+        "required": false
+      },
+      "border_style": {
+        "type": "string",
+        "description": "Border style (e.g., single, double, dashed)",
+        "required": false
+      },
+      "shading": {
+        "type": "array",
+        "description": "Cell shading colors",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "get_current_directory",
+    "server": "terminal-controller",
+    "full_name": "terminal-controller-get_current_directory",
+    "description": "Get current working directory path.",
+    "parameters": {}
+  },
+  {
+    "name": "change_directory",
+    "server": "terminal-controller",
+    "full_name": "terminal-controller-change_directory",
+    "description": "Change current working directory to the specified path.",
+    "parameters": {
+      "path": {
+        "type": "string",
+        "description": "Directory path to switch to",
+        "required": true
+      }
+    }
+  },
+  {
+    "name": "list_directory",
+    "server": "desktop-commander",
+    "full_name": "desktop-commander-list_directory",
+    "description": "List files and subdirectories in the specified directory.",
+    "parameters": {
+      "path": {
+        "type": "string",
+        "description": "Directory path to list contents (defaults to current directory if not provided)",
+        "required": true
+      }
+    }
+  },
+  {
+    "name": "read_file",
+    "server": "desktop-commander",
+    "full_name": "desktop-commander-read_file",
+    "description": "Read content from a file with optional row selection.",
+    "parameters": {
+      "path": {
+        "type": "string",
+        "description": "Path to the file to read",
+        "required": true
+      },
+      "start_row": {
+        "type": "integer",
+        "description": "Starting row to read from (0-based, optional)",
+        "required": false
+      },
+      "end_row": {
+        "type": "integer",
+        "description": "Ending row to read to (0-based, inclusive, optional)",
+        "required": false
+      },
+      "as_json": {
+        "type": "boolean",
+        "description": "If true, attempt to parse file content as JSON",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "write_file",
+    "server": "desktop-commander",
+    "full_name": "desktop-commander-write_file",
+    "description": "Write content to a file (overwrites or appends).",
+    "parameters": {
+      "path": {
+        "type": "string",
+        "description": "Path to the file to write",
+        "required": true
+      },
+      "content": {
+        "type": "string",
+        "description": "Content to write to the file",
+        "required": true
+      },
+      "mode": {
+        "type": "string",
+        "description": "Write mode: 'overwrite' or 'append' (default: overwrite)",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "execute_command",
+    "server": "desktop-commander",
+    "full_name": "desktop-commander-execute_command",
+    "description": "Execute a terminal command and return its output.",
+    "parameters": {
+      "command": {
+        "type": "string",
+        "description": "Command line command to execute",
+        "required": true
+      },
+      "timeout": {
+        "type": "integer",
+        "description": "Command timeout in seconds (default: 30)",
+        "required": false
+      }
+    }
+  }
+]

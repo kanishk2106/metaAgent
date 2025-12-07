@@ -1,0 +1,55 @@
+{
+  "tool_name": "add_table",
+  "description": "Add a table to a Word document.",
+  "input_args": {
+    "filename": "string",
+    "rows": "integer",
+    "cols": "integer",
+    "data": "array"
+  },
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {
+      "filename": "Q3_Sales_Report.docx",
+      "rows": 5,
+      "cols": 4,
+      "data": [
+        [
+          "Product Name",
+          "Units Sold",
+          "Unit Price",
+          "Total Revenue"
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    "output": {
+      "result": null
+    }
+  }
+}

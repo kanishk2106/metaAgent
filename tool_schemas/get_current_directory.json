@@ -1,0 +1,14 @@
+{
+  "tool_name": "get_current_directory",
+  "description": "Get current working directory\n    \n    Returns:\n        Path of current working directory",
+  "input_args": {},
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {},
+    "output": {
+      "result": null
+    }
+  }
+}

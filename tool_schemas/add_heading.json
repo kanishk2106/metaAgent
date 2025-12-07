@@ -1,0 +1,22 @@
+{
+  "tool_name": "add_heading",
+  "description": "Add a heading to a Word document.",
+  "input_args": {
+    "filename": "string",
+    "text": "string",
+    "level": "integer"
+  },
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {
+      "filename": "Q3_Sales_Report.docx",
+      "text": "Q3 Sales Report",
+      "level": 1
+    },
+    "output": {
+      "result": null
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "tool_name": "format_table",
+  "description": "Format a table with borders, shading, and structure.",
+  "input_args": {
+    "filename": "string",
+    "table_index": "integer",
+    "has_header_row": "boolean",
+    "border_style": "string",
+    "shading": "array"
+  },
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {
+      "filename": "Q3_Sales_Report.docx",
+      "table_index": 0,
+      "has_header_row": true,
+      "border_style": "single",
+      "shading": [
+        {
+          "row": 0,
+          "color": "D3D3D3"
+        }
+      ]
+    },
+    "output": {
+      "result": null
+    }
+  }
+}

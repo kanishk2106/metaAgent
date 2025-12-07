@@ -1,0 +1,20 @@
+{
+  "tool_name": "write_file",
+  "description": "Write content to a file\n    \n    Args:\n        path: Path to the file\n        content: Content to write (string or JSON object)\n        mode: Write mode ('overwrite' or 'append')\n    \n    Returns:\n        Operation result information",
+  "input_args": {
+    "path": "string",
+    "content": "string"
+  },
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {
+      "path": "extracted_errors.txt",
+      "content": "2024-01-15 10:30:17 [ERROR] Failed to load user preferences: file not found\n2024-01-15 10:30:19 [ERROR] Connection timeout to external API\n2024-01-15 10:30:20 [ERROR] Invalid response format from service"
+    },
+    "output": {
+      "result": null
+    }
+  }
+}

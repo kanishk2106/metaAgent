@@ -1,0 +1,18 @@
+{
+  "tool_name": "read_file",
+  "description": "Read content from a file with optional row selection\n    \n    Args:\n        path: Path to the file\n        start_row: Starting row to read from (0-based, optional)\n        end_row: Ending row to read to (0-based, inclusive, optional)\n        as_json: If True, attempt to parse file content as JSON (optional)\n    \n    Returns:\n        File content or selected lines, optionally parsed as JSON",
+  "input_args": {
+    "path": "string"
+  },
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {
+      "path": "sample.log"
+    },
+    "output": {
+      "result": null
+    }
+  }
+}

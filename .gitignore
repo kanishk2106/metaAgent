@@ -1,0 +1,24 @@
+# System files
+.DS_Store
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Generated Output
+Output/
+
+# Large Data Files (Generated)
+*.jsonl
+meta_families.json
+toucan_patterns.json
+toucan_tool_schemas.json
+
+# Keep these config files
+!all_11_tools.json
+!all_11_distinct_tools.json

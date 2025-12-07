@@ -1,0 +1,251 @@
+[
+  {
+    "name": "add_heading",
+    "server": "office-word-document-server",
+    "full_name": "office-word-document-server-add_heading",
+    "description": "Add a heading to a Word document.",
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "description": "",
+        "required": true
+      },
+      "text": {
+        "type": "string",
+        "description": "",
+        "required": true
+      },
+      "level": {
+        "type": "integer",
+        "description": "",
+        "required": false
+      }
+    },
+    "required_parameters": [
+      "filename",
+      "text"
+    ]
+  },
+  {
+    "name": "add_paragraph",
+    "server": "office-word-document-server",
+    "full_name": "office-word-document-server-add_paragraph",
+    "description": "Add a paragraph to a Word document.",
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "description": "",
+        "required": true
+      },
+      "text": {
+        "type": "string",
+        "description": "",
+        "required": true
+      },
+      "style": {
+        "type": "string",
+        "description": "",
+        "required": false
+      }
+    },
+    "required_parameters": [
+      "filename",
+      "text"
+    ]
+  },
+  {
+    "name": "add_table",
+    "server": "office-word-document-server",
+    "full_name": "office-word-document-server-add_table",
+    "description": "Add a table to a Word document.",
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "description": "",
+        "required": true
+      },
+      "rows": {
+        "type": "integer",
+        "description": "",
+        "required": true
+      },
+      "cols": {
+        "type": "integer",
+        "description": "",
+        "required": true
+      },
+      "data": {
+        "type": "array",
+        "description": "",
+        "required": false
+      }
+    },
+    "required_parameters": [
+      "filename",
+      "rows",
+      "cols"
+    ]
+  },
+  {
+    "name": "change_directory",
+    "server": "terminal-controller",
+    "full_name": "terminal-controller-change_directory",
+    "description": "\n    Change current working directory\n    \n    Args:\n        path: Directory path to switch to\n    \n    Returns:\n        Operation result information\n    ",
+    "parameters": {
+      "path": {
+        "type": "string",
+        "description": "",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "path"
+    ]
+  },
+  {
+    "name": "create_document",
+    "server": "office-word-document-server",
+    "full_name": "office-word-document-server-create_document",
+    "description": "Create a new Word document with optional metadata.",
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "description": "",
+        "required": true
+      },
+      "title": {
+        "type": "string",
+        "description": "",
+        "required": false
+      },
+      "author": {
+        "type": "string",
+        "description": "",
+        "required": false
+      }
+    },
+    "required_parameters": [
+      "filename"
+    ]
+  },
+  {
+    "name": "execute_command",
+    "server": "desktop-commander",
+    "full_name": "desktop-commander-execute_command",
+    "description": "\n    Execute terminal command and return results\n    \n    Args:\n        command: Command line command to execute\n        timeout: Command timeout in seconds, default is 30 seconds\n    \n    Returns:\n        Output of the command execution\n    ",
+    "parameters": {
+      "command": {
+        "type": "string",
+        "description": "",
+        "required": true
+      },
+      "timeout": {
+        "type": "integer",
+        "description": "",
+        "required": false
+      }
+    },
+    "required_parameters": [
+      "command"
+    ]
+  },
+  {
+    "name": "format_table",
+    "server": "office-word-document-server",
+    "full_name": "office-word-document-server-format_table",
+    "description": "Format a table with borders, shading, and structure.",
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "description": "",
+        "required": true
+      },
+      "table_index": {
+        "type": "integer",
+        "description": "",
+        "required": true
+      },
+      "has_header_row": {
+        "type": "boolean",
+        "description": "",
+        "required": false
+      },
+      "border_style": {
+        "type": "string",
+        "description": "",
+        "required": false
+      },
+      "shading": {
+        "type": "array",
+        "description": "",
+        "required": false
+      }
+    },
+    "required_parameters": [
+      "filename",
+      "table_index"
+    ]
+  },
+  {
+    "name": "get_current_directory",
+    "server": "terminal-controller",
+    "full_name": "terminal-controller-get_current_directory",
+    "description": "\n    Get current working directory\n    \n    Returns:\n        Path of current working directory\n    ",
+    "parameters": {},
+    "required_parameters": []
+  },
+  {
+    "name": "list_directory",
+    "server": "desktop-commander",
+    "full_name": "desktop-commander-list_directory",
+    "description": "\n    List files and subdirectories in the specified directory\n    \n    Args:\n        path: Directory path to list contents, default is current directory\n    \n    Returns:\n        List of directory contents\n    ",
+    "parameters": {
+      "path": {
+        "type": "string",
+        "description": "Path to the directory to list. Can be absolute or relative to Unity project Assets folder. If empty, defaults to the Assets folder. Example: \"Scenes\" will list all files in the Assets/Scenes directory.",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "path"
+    ]
+  },
+  {
+    "name": "read_file",
+    "server": "desktop-commander",
+    "full_name": "desktop-commander-read_file",
+    "description": "\n    Read content from a file with optional row selection\n    \n    Args:\n        path: Path to the file\n        start_row: Starting row to read from (0-based, optional)\n        end_row: Ending row to read to (0-based, inclusive, optional)\n        as_json: If True, attempt to parse file content as JSON (optional)\n    \n    Returns:\n        File content or selected lines, optionally parsed as JSON\n    ",
+    "parameters": {
+      "path": {
+        "type": "string",
+        "description": "Path to the file to read. Can be absolute or relative to Unity project Assets folder. If empty, defaults to the Assets folder.",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "path"
+    ]
+  },
+  {
+    "name": "write_file",
+    "server": "desktop-commander",
+    "full_name": "desktop-commander-write_file",
+    "description": "\n    Write content to a file\n    \n    Args:\n        path: Path to the file\n        content: Content to write (string or JSON object)\n        mode: Write mode ('overwrite' or 'append')\n    \n    Returns:\n        Operation result information\n    ",
+    "parameters": {
+      "path": {
+        "type": "string",
+        "description": "Path to the file to write. Can be absolute or relative to Unity project Assets folder. If empty, defaults to the Assets folder.",
+        "required": true
+      },
+      "content": {
+        "type": "string",
+        "description": "Content to write to the file",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "path",
+      "content"
+    ]
+  }
+]

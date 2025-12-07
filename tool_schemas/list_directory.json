@@ -1,0 +1,18 @@
+{
+  "tool_name": "list_directory",
+  "description": "List files and subdirectories in the specified directory\n    \n    Args:\n        path: Directory path to list contents, default is current directory\n    \n    Returns:\n        List of directory contents",
+  "input_args": {
+    "path": "string"
+  },
+  "output_args": {
+    "result": "string"
+  },
+  "example": {
+    "input": {
+      "path": "documents"
+    },
+    "output": {
+      "result": null
+    }
+  }
+}
