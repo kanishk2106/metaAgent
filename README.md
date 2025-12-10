@@ -30,3 +30,7 @@ pip install -r requirements.txt
 ## Usage
 
 Run the scripts in the order listed in the Pipeline Overview to regenerate the meta-tools.
+
+## Evaluation
+
+For evaluation provide different prompts to the server and then enter '/stats' to get the token usage and latency and other meta-data
